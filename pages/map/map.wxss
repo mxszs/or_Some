@@ -1,0 +1,8 @@
+/* pages/map/map.wxss */
+.map-class {
+  width:100%;
+}
+
+map {
+  width: 100%;
+}

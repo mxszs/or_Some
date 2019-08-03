@@ -1,0 +1,40 @@
+<!--pages/overview/overview.wxml-->
+<view class="slide">
+        <swiper indicator-dots="true" indicator-active-color="red" circular="true" autoplay="true" interval="2000" duration="500">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" width="355" height="150" mode="aspectFill"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <!-- <navigator url="../map/map" hover-class="none">
+          <button>
+            地图
+          </button>
+        </navigator> -->
+        <van-tabs sticky color="#16c2c2" animated type="line">
+          <van-tab title="推荐">
+          <view wx:for="{{recommend}}">
+          <van-panel title="{{item.title}}" desc="{{item.dec}}" >
+            <view class="viewPadding">
+            <!-- <van-row>
+                <van-col wx:for="{{item.images}}" span="8"><image class="imageCol" src="{{item}}" /></van-col>
+              </van-row> -->
+              <view class="question-images">
+                <block wx:for="{{item.images}}"  wx:for-item="items" wx:key="*this">
+                  <view class="q-image-wrap">
+                    <image class="q-image" src="{{items}}" data-list="{{item.images}}" mode="aspectFill"  data-idx="{{index}}" bindtap="handleImagePreview"></image>
+                  </view>
+                </block>
+              </view>
+            <view class="van-multi-ellipsis--l3">
+{{item.textDec}}
+            </view>
+            </view>
+          </van-panel>
+          </view>
+          </van-tab>
+          <van-tab title="热门">热门</van-tab>
+          <van-tab title="附近">附近</van-tab>
+        </van-tabs>
+  </view>

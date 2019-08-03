@@ -1,0 +1,48 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.viewPadding {
+  padding: 0 16px;
+}
+.imageCol {
+  width: 100%;
+  height: 96px;
+}
+.slide-image {
+  width: 100%;
+}
+.question-images {
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.q-image-wrap {
+  width: 31%;
+  margin-right: 10rpx;
+}
+
+.q-image {
+  /* flex: 1; */
+  height: 200rpx;
+  width: 100%;
+}

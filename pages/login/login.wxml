@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <view class="info-class">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+    </view>
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" lang="zh_CN" >
+        授权登录
+    </button>
+</view>

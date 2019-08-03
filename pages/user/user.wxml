@@ -1,0 +1,13 @@
+<view>
+  <view class="userinfo">
+    <view class="info-class">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    <view class="info-class"><text class="userinfo-nickname">{{userInfo.nickName}}</text></view>
+  </view>
+   <navigator url="../upload/question-ask">
+      <button>
+      上传测试数据
+      </button>
+    </navigator>
+</view>

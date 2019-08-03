@@ -1,0 +1,27 @@
+<view>
+<scroll-view scroll-y style="height: 600px;">
+<view wx:for="{{info_list}}">
+          <van-panel title="{{item.title}}" desc="{{item.dec}}" >
+          <view class="info-class">
+            <image class="userinfo-avatar" src="{{item.avatarUrl}}" mode="cover"></image>
+            <text>{{item.nickName}}发布</text>
+          </view>
+            <view class="viewPadding">
+            <!-- <van-row>
+                <van-col wx:for="{{item.images}}" span="8"><image class="imageCol" src="{{item}}" /></van-col>
+              </van-row> -->
+               <view class="question-images">
+                <block wx:for="{{item.images}}" wx:for-item="items" wx:key="*this">
+                  <view class="q-image-wrap">
+                    <image class="q-image" src="{{items}}" data-list="{{item.images}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+                  </view>
+                </block>
+              </view>
+            <view class="van-multi-ellipsis--l3">
+{{item.textDec}}
+            </view>
+            </view>
+          </van-panel>
+</view>
+</scroll-view>
+</view>

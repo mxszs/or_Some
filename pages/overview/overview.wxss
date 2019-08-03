@@ -1,0 +1,5 @@
+/* pages/overview/overview.wxss */
+.slide-image {
+  width: 100%;
+}
+
