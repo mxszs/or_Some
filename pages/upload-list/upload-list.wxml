@@ -1,18 +1,12 @@
+
 <view>
-<van-cell title="动态">
-  <van-icon slot="right-icon" color="red" name="fire-o" class="custom-icon" />
-</van-cell>
-<scroll-view wx:if="{{info_list.length}}" scroll-y style="height: 550px;">
+<scroll-view wx:if="{{info_list.length}}" wx:key="*this" scroll-y style="height: 600px;">
 <view wx:for="{{info_list}}">
-          <van-panel class="positionRecommonRelive" title="{{item.title}}" desc="{{item.dec}}" >
-          <view wx:if="{{!item.isCollection}}" bindtap="addCollection"  data-id="{{item._id}}" class="positionRecommon">收藏</view>
-          <view wx:else bindtap="deleteCollection" data-id="{{item._id}}" class="positionRecommon">取消收藏</view>
+<view>
+          <van-panel title="{{item.title}}" desc="{{item.dec}}" >
           <view class="info-class">
-          <view>
             <image class="userinfo-avatar" src="{{item.avatarUrl}}" mode="cover"></image>
             <text>{{item.nickName}}于{{item.timer}}发布</text>
-          </view>
-            <navigator url="../list-detail/list-detail?id={{item._id}}">查看</navigator>
           </view>
             <view class="viewPadding">
             <!-- <van-row>
@@ -30,9 +24,14 @@
             </view>
             </view>
           </van-panel>
+          <view class="deleteBox">
+           <van-button wx:if="{{key === 'upload'}}" data-id="{{item._id}}" bindtap="deleteList" type="info">删除</van-button>
+           <van-button wx:if="{{key === 'collection'}}" data-id="{{item._id}}" bindtap="deleteCollection" type="info">取消收藏</van-button>
+          </view>
+      </view>
 </view>
 </scroll-view>
-<noData wx:if="{{loading}}">
-  <view bindtap='a'>暂无数据</view>
+<noData  wx:if="{{loading}}">
+  <view>暂无数据</view>
 </noData>
 </view>

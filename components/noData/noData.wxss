@@ -1,0 +1,17 @@
+/* components/noData/noData.wxss */
+.noData{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  justify-content: center;
+  align-items: center;
+}
+.noData image{
+  width:300rpx;
+}
+.noData view{
+  font-size: 24rpx;
+  color:#888;
+  margin-top: 40rpx;
+}

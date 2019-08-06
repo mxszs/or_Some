@@ -5,6 +5,14 @@
     </view>
     <view class="info-class"><text class="userinfo-nickname">{{userInfo.nickName}}</text></view>
   </view>
+  <van-cell-group>
+  <navigator url="../upload-list/upload-list?id={{userInfo.openid}}&nickname={{userInfo.nickname}}&key=collection">
+    <van-cell title="我的收藏" is-link />
+    </navigator>
+    <navigator url="../upload-list/upload-list?id={{userInfo.openid}}&nickname={{userInfo.nickname}}&key=upload">
+    <van-cell title="我的上传" is-link border="{{ false }}" />
+    </navigator>
+  </van-cell-group> 
    <navigator url="../upload/question-ask">
       <button>
       上传测试数据

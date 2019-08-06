@@ -1,13 +1,16 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/list/list",
     "pages/index/index",
     "pages/overview/overview",
     "pages/logs/logs",
     "pages/user/user",
     "pages/map/map",
-    "pages/list/list",
-    "pages/upload/question-ask"
+    "pages/upload/question-ask",
+    "pages/list-detail/list-detail",
+    "pages/upload-list/upload-list",
+    "components/noData/noData"
   ],
   "permission": {
     "scope.userLocation": {

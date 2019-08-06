@@ -1,0 +1,4 @@
+<view class="noData">
+  <image src="../../pages/images/404.jpg" mode="widthFix" class="noDataImg"></image>
+  <slot></slot>
+</view>

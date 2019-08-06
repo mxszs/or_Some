@@ -1,3 +1,4 @@
+/* pages/upload-list/upload-list.wxss */
 /* pages/list/list.wxss */
 .viewPadding {
   padding: 0 8px;
@@ -10,17 +11,7 @@
 }
 .info-class {
   display: flex;
-  padding-right:16px; 
-  justify-content: space-between;
   align-items: center;
-}
-.info-class view {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.info-class navigator {
-  color: #16c2c2;
 }
 image{
   width: 100%;
@@ -29,14 +20,18 @@ image{
 .question-images {
   display: flex;
   flex-wrap:wrap;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 40rpx;
 }
 
 .q-image-wrap {
   /* flex: 1; */
-  width: 31%;
-  margin-right: 10rpx;
+  width: 32%;
+  margin-right: 15rpx;
+}
+.q-image-wrap:nth-child(3n + 0) {
+  margin-right: 0;
 }
 
 .q-image {
@@ -44,12 +39,7 @@ image{
   height: 200rpx;
   width: 100%;
 }
-.positionRecommonRelive {
-  position: relative;
-}
-.positionRecommon {
-  position: absolute;
-  top:9px;
-  right: 16px;
-  color: #d8d8d8;
+.deleteBox {
+  padding: 0 8px;
+text-align: right;
 }

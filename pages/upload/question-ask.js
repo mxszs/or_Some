@@ -1,5 +1,6 @@
 import { promisify } from '../../utils/promise.util'
 import { $init, $digest } from '../../utils/common.util'
+import Toast from '../../miniprogram_npm/vant-weapp/toast/toast';
 
 const wxUploadFile = promisify(wx.uploadFile)
 const app = getApp()
@@ -116,13 +117,15 @@ Page({
         console.log(">>>> upload images error:", err)
       }).then(urls => {
         const db = wx.cloud.database();
+        console.log(app.globalData.userInfo, 1)
         db.collection('info_list').add({
           data: {
             title,
             images: urls,
             textDec: content,
-            avatarUrl: userInfo.avatarUrl,
-            nickName: userInfo.nickName,
+            avatarUrl: app.globalData.userInfo.avatarUrl,
+            nickName: app.globalData.userInfo.nickName,
+            timer: Date.now(),
           },
           success: function (res) {
             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -142,6 +145,11 @@ Page({
         })
       })
 
+    } else {
+      Toast({
+        message: '请填写标题和内容',
+        position: 'top'
+      });
     }
   },
 

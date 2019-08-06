@@ -15,7 +15,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    wx.checkSession({
+      success: function (res) {
+        console.log(1111);
+      },
+      fail: function (res) {
+        console.log("需要重新登录");
+        wx.login({})
+      }
+    })
   },
   postData: () => {
     const db = wx.cloud.database();

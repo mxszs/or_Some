@@ -17,8 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.loadBanner();
-    this.loadRecommend();
+    const that = this;
+    wx.checkSession({
+      　　　　success: function (res) {
+            that.loadBanner();
+            that.loadRecommend();
+      　　　　},
+      　　　　fail: function (res) {
+        　　　　　　console.log("需要重新登录");
+        　　　　　　wx.login({})
+      　　　　}
+    　　})
   },
   loadBanner: function() {
       var that = this;

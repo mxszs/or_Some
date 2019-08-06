@@ -88,10 +88,29 @@ Page({
           success: function (res) {
             getApp().globalData.userInfo = {
               ...getApp().globalData.userInfo,
-              ...res.data
+              ...res.data,
             };
+            
           }
         })
+      }
+    })
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'openid',
+      // 传递给云函数的参数
+      data: {
+      },
+      success: res => {
+        console.log(res, 11);
+        wx.setStorageSync("openid", String(res.result.openid))
+        // output: res.result === 3
+      },
+      fail: err => {
+        console.log(err)
+      },
+      complete: () => {
+        // ...
       }
     })
 
