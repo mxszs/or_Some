@@ -1,7 +1,9 @@
 // pages/list/list.js
 import { setTimer } from '../../utils/timer'
 const app = getApp()
-wx.cloud.init()
+wx.cloud.init({
+  env: 'orso-xobx1',
+})
 Page({
 
   /**
@@ -64,8 +66,9 @@ Page({
       _openid: id,
       nickName: name,
     }
+    const openid = wx.getStorageSync("openid")
     const collectionFilter = {
-      collection: id
+      collection: openid
     }
     const fliterList = this.data.key === 'upload' ? uploadFilter : collectionFilter;
     db.collection('info_list').where({ ...fliterList}).get().then(res => {
@@ -110,9 +113,10 @@ Page({
   deleteCollection: function (e) {
     const that = this;
     const clickid = e.target.dataset.id;
+    const key = e.target.dataset.key;
     const openid = wx.getStorageSync("openid")
     wx.showLoading({
-      title: '取消收藏...',
+      title: '正在取消...',
       mask: true,
     })
     wx.cloud.callFunction({
@@ -122,6 +126,7 @@ Page({
       data: {
         _id: clickid,
         collection: openid,
+        key: key,
       },
       success: res => {
         wx.hideLoading({

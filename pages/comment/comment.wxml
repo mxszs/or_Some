@@ -1,0 +1,19 @@
+<!--pages/comment/comment.wxml-->
+<view>
+   <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+       <label>
+       <text>评论：</text>
+       <view>
+          <textarea value="{{content}}" class="weui-textarea" placeholder="请输入评论。" maxlength="500" placeholder-style="color:#b3b3b3;font-size:14px;" style="height: 12rem" bindinput="handleContentInput" />
+          <view class="weui-textarea-counter">{{contentCount}}/500</view>
+          </view>
+          </label>
+        </view>
+      </view>
+    </view>
+  <view class="submitBox">
+    <van-button bindtap="submit" style="margin-right: 8px" type="primary">提交</van-button>
+  </view>
+</view>

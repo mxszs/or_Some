@@ -1,0 +1,50 @@
+/* pages/comment/comment.wxss */
+.submitBox {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 8px;
+}
+.submitBox button{
+  margin-top: 8px; 
+  margin-right: 8px;
+}
+.weui-textarea-counter {
+  color: #b3b3b3;
+  font-size: 14px;
+  /* padding-left: 10rpx; */
+width: 90%;
+padding: 0 8px;
+text-align: right;
+background-color: #FFFFFF;
+}
+
+.weui-cell::before, .weui-cells::before, .weui-cell::after, .weui-cells::after {
+  border: none;
+}
+
+.textareaBox {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid red;
+}
+label {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8rpx 8px;
+  background-color: #F6F6F6;
+}
+label view {
+  width: 100%;
+}
+label text {
+  display: inline-block;
+  width: 56px;
+  background-color: #FFFFFF;
+}
+textarea {
+  width: 90%;
+  padding: 4px 8px 0;
+  background-color: #FFFFFF;
+}

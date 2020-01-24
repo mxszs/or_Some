@@ -37,8 +37,11 @@
 }
 
 .q-image-wrap {
-  width: 31%;
-  margin-right: 10rpx;
+  width: 32%;
+  margin-right: 12rpx;
+}
+.q-image-wrap:nth-child(3n + 0) {
+  margin-right: 0;
 }
 
 .q-image {

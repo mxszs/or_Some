@@ -3,14 +3,15 @@
     "pages/login/login",
     "pages/list/list",
     "pages/index/index",
-    "pages/overview/overview",
     "pages/logs/logs",
     "pages/user/user",
     "pages/map/map",
     "pages/upload/question-ask",
     "pages/list-detail/list-detail",
     "pages/upload-list/upload-list",
-    "components/noData/noData"
+    "pages/comment/comment",
+    "components/noData/noData",
+    "pages/game/2048"
   ],
   "permission": {
     "scope.userLocation": {
@@ -42,12 +43,6 @@
         "iconPath": "pages/images/find.png",
         "selectedIconPath": "pages/images/find-active.png",
         "text": "发现"
-      },
-      {
-        "pagePath": "pages/overview/overview",
-        "iconPath": "pages/images/overview.png",
-        "selectedIconPath": "pages/images/overview-active.png",
-        "text": "总览"
       },
       {
         "pagePath": "pages/user/user",

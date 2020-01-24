@@ -1,38 +1,59 @@
 <view>
-<van-cell title="动态">
-  <van-icon slot="right-icon" color="red" name="fire-o" class="custom-icon" />
-</van-cell>
-<scroll-view wx:if="{{info_list.length}}" scroll-y style="height: 550px;">
-<view wx:for="{{info_list}}">
-          <van-panel class="positionRecommonRelive" title="{{item.title}}" desc="{{item.dec}}" >
-          <view wx:if="{{!item.isCollection}}" bindtap="addCollection"  data-id="{{item._id}}" class="positionRecommon">收藏</view>
-          <view wx:else bindtap="deleteCollection" data-id="{{item._id}}" class="positionRecommon">取消收藏</view>
-          <view class="info-class">
+  <van-cell border="{{false}}" title="动态">
+    <van-icon slot="right-icon" bindtap="uploadData" color="#16c2c2" name="add-o" class="custom-icon" size="20px" />
+  </van-cell>
+  <scroll-view bindscrolltolower="addloadList" wx:if="{{info_list.length}}" class="scrollStyle" scroll-y style="height: 586px;">
+    <view class="boxStyle" wx:for="{{info_list}}">
+      <van-panel header-class="widthLimt" class="positionRecommonRelive" title="{{item.title}}" desc="{{item.dec}}">
+
+        <view class="info-class">
           <view>
             <image class="userinfo-avatar" src="{{item.avatarUrl}}" mode="cover"></image>
-            <text>{{item.nickName}}于{{item.timer}}发布</text>
+            <view class="userInfo">
+              <text class="nickNameStyle">{{item.nickName}}</text>
+              <text>{{item.timer}}</text>
+            </view>
           </view>
-            <navigator url="../list-detail/list-detail?id={{item._id}}">查看</navigator>
-          </view>
-            <view class="viewPadding">
-            <!-- <van-row>
+          <navigator url="../list-detail/list-detail?id={{item._id}}">查看</navigator>
+        </view>
+        <view class="viewPadding">
+          <!-- <van-row>
                 <van-col wx:for="{{item.images}}" span="8"><image class="imageCol" src="{{item}}" /></van-col>
               </van-row> -->
-               <view class="question-images">
-                <block wx:for="{{item.images}}" wx:for-item="items" wx:key="*this">
-                  <view class="q-image-wrap">
-                    <image class="q-image" src="{{items}}" data-list="{{item.images}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
-                  </view>
-                </block>
+          <view class="question-images">
+            <block wx:for="{{item.images}}" wx:for-item="items" wx:key="*this">
+              <view class="q-image-wrap">
+                <image class="q-image" src="{{items}}" data-list="{{item.images}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
               </view>
-            <view class="van-multi-ellipsis--l3">
-{{item.textDec}}
-            </view>
-            </view>
-          </van-panel>
-</view>
-</scroll-view>
-<noData wx:if="{{loading}}">
-  <view bindtap='a'>暂无数据</view>
-</noData>
+            </block>
+          </view>
+          <view class="textDecWidth van-multi-ellipsis--l3">
+            {{item.textDec}}
+          </view>
+        </view>
+      </van-panel>
+      <view class="active">
+        <view class="activeBox">
+          <view bindtap="addCollection" data-key="dianzan" data-id="{{item._id}}" wx:if="{{!item.isDianzan}}">
+            <van-icon class="iconStyle" size="20px" name="like-o" />{{item.dianzan.length === 0 ? '赞' : item.dianzan.length}}</view>
+          <view data-key="dianzan" bindtap="deleteCollection" data-id="{{item._id}}" wx:else>
+            <van-icon class="iconStyle" color="red" style="line-height: 0" size="20px" name="like" />{{item.dianzan.length}}</view>
+        </view>
+        <view class="activeBox">
+          <view wx:if="{{!item.isCollection}}" bindtap="addCollection" data-key="collection" data-id="{{item._id}}">
+            <van-icon class="iconStyle" size="20px" name="star-o" />{{item.collection.length === 0 ? '收藏' : item.collection.length}}</view>
+          <view wx:else bindtap="deleteCollection" data-id="{{item._id}}" data-key="collection">
+            <van-icon class="iconStyle" size="20px" color="yellow" name="star" />{{item.collection.length}}</view>
+        </view>
+        <view class="activeBox">
+          <view bindtap="addComment" data-key="comment" data-id="{{item._id}}">
+            <van-icon class="iconStyle" size="20px" name="chat-o" />评论</view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+  <noData wx:if="{{loading}}">
+    <view bindtap='a'>暂无数据</view>
+  </noData>
 </view>

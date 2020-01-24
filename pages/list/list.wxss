@@ -2,6 +2,29 @@
 .viewPadding {
   padding: 0 8px;
 }
+.userInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.scrollStyle {
+  background-color: #F6F6F6;
+}
+.boxStyle {
+  margin-bottom: 16px;
+}
+.userInfo text {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.nickNameStyle {
+  margin-bottom: 8px;
+  font-size:14px;
+  font-weight: 700; 
+}
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -16,6 +39,7 @@
 }
 .info-class view {
   display: flex;
+  width: 50%;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,15 +54,15 @@ image{
   display: flex;
   flex-wrap:wrap;
   align-items: center;
-  margin-top: 40rpx;
 }
 
 .q-image-wrap {
-  /* flex: 1; */
-  width: 31%;
-  margin-right: 10rpx;
+  width: 32%;
+  margin-right: 12rpx;
 }
-
+.q-image-wrap:nth-child(3n + 0) {
+  margin-right: 0;
+}
 .q-image {
   /* flex: 1; */
   height: 200rpx;
@@ -47,9 +71,45 @@ image{
 .positionRecommonRelive {
   position: relative;
 }
+.widthLimt {
+  width: 200px;
+}
 .positionRecommon {
   position: absolute;
   top:9px;
   right: 16px;
   color: #d8d8d8;
+}
+.textDecWidth {
+  width: 100%;
+  word-wrap: break-word;
+}
+.active {
+/* position: relative; */
+display: -webkit-flex;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+padding: 10px 15px;
+font-size: 14px;
+line-height: 24px;
+color: #333;
+background-color: #fff;
+box-sizing: border-box;
+}
+.activeBox {
+  margin-right: 20px;
+}
+.activeBox view{
+  display: flex;
+  align-items: center;
+}
+.iconStyle {
+  line-height: 0;
+  margin-right: 4px
+}
+.imagesDianzan {
+  width: 24px;
+  height: 24px;
 }

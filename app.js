@@ -2,7 +2,7 @@
 App({
   onLaunch: function () {
     wx.cloud.init({
-      env: 'orso-w05bu',
+      env: 'orso-xobx1',
     })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

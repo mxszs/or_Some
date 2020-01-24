@@ -1,1 +1,146 @@
 /* pages/list-detail/list-detail.wxss */
+/* pages/list/list.wxss */
+.viewPadding {
+  padding: 0 8px;
+}
+.boxStyle {
+  background-color: #F6F6F6;
+}
+.positionRecommonRelive {
+  background-color: #FFFFFF;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.info-class {
+  display: flex;
+  padding-right:16px; 
+  justify-content: space-between;
+  align-items: center;
+}
+.info-class view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-class navigator {
+  color: #16c2c2;
+}
+.userInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.textDecWidth {
+  width: 100%;
+  padding-bottom: 8px;
+  word-wrap: break-word;
+}
+.userInfo text {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.nickNameStyle {
+  margin-bottom: 8px;
+  font-size:14px;
+  font-weight: 700; 
+}
+image{
+  width: 100%;
+  height: 200rpx;
+}
+.question-images {
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+}
+
+.q-image-wrap {
+  width: 32%;
+  margin-right: 15rpx;
+}
+.q-image-wrap:nth-child(3n + 0) {
+  margin-right: 0;
+}
+
+.q-image {
+  /* flex: 1; */
+  height: 200rpx;
+  width: 100%;
+}
+.iconStyle {
+  line-height: 0;
+  margin-right: 4px
+}
+.dommentStyle {
+  margin-top: 16px;
+  padding: 0 8px;
+  background-color: #FFFFFF;
+  margin-bottom: 40px;
+}
+.dommentStyle view:last-child .commentBoxStyle  {
+  border: none;
+}
+.commentText {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.commentBoxStyle {
+  display: flex;
+  /* align-items: center; */
+  padding: 16px 0;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+.commentBoxStyle text:first-child {
+color: #5758BB;
+font-weight: 500;
+}
+.commentBoxStyle text:last-child {
+  margin-top: 8px;
+word-break: break-all;
+}
+.commentBoxStyle image {
+  width: 24px;
+  height: 24px;
+  margin-top: 13rpx;
+}
+.commentInfo {
+  min-height: 65px;
+}
+.collectBox {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+  line-height: 40px;
+  background: #FFFFFF;
+  border-top: 1rpx solid #F6F6F6; 
+}
+.collectBox view {
+  margin-right: 16px;
+}
+.activeBox {
+  margin-right: 20px;
+}
+.activeBox view{
+  display: flex;
+  align-items: center;
+}
+.iconStyle {
+  line-height: 0;
+  margin-right: 4px
+}
+.imagesDianzan {
+  width: 24px;
+  height: 24px;
+}

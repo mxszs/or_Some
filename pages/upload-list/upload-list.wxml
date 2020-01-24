@@ -1,12 +1,12 @@
 
 <view>
-<scroll-view wx:if="{{info_list.length}}" wx:key="*this" scroll-y style="height: 600px;">
-<view wx:for="{{info_list}}">
+<scroll-view wx:if="{{info_list.length}}" class="scrollStyle" wx:key="*this" scroll-y style="height: 100%">
+<view class="boxStyle" wx:for="{{info_list}}">
 <view>
           <van-panel title="{{item.title}}" desc="{{item.dec}}" >
           <view class="info-class">
             <image class="userinfo-avatar" src="{{item.avatarUrl}}" mode="cover"></image>
-            <text>{{item.nickName}}于{{item.timer}}发布</text>
+            <text>{{item.timer}}发布</text>
           </view>
             <view class="viewPadding">
             <!-- <van-row>
@@ -19,14 +19,14 @@
                   </view>
                 </block>
               </view>
-            <view class="van-multi-ellipsis--l3">
+            <view class="textDecWidth van-multi-ellipsis--l3">
 {{item.textDec}}
             </view>
             </view>
           </van-panel>
           <view class="deleteBox">
-           <van-button wx:if="{{key === 'upload'}}" data-id="{{item._id}}" bindtap="deleteList" type="info">删除</van-button>
-           <van-button wx:if="{{key === 'collection'}}" data-id="{{item._id}}" bindtap="deleteCollection" type="info">取消收藏</van-button>
+           <van-button round size="mini" wx:if="{{key === 'upload'}}" data-id="{{item._id}}" bindtap="deleteList" type="info">删除</van-button>
+           <van-button round size="mini" wx:if="{{key === 'collection'}}" data-key="collection" data-id="{{item._id}}" bindtap="deleteCollection" type="info">取消收藏</van-button>
           </view>
       </view>
 </view>

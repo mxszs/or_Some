@@ -10,12 +10,15 @@
     <van-cell title="我的收藏" is-link />
     </navigator>
     <navigator url="../upload-list/upload-list?id={{userInfo.openid}}&nickname={{userInfo.nickname}}&key=upload">
-    <van-cell title="我的上传" is-link border="{{ false }}" />
+    <van-cell title="我的上传" is-link />
+    </navigator>
+     <navigator url="../game/2048">
+    <van-cell title="我的游戏" is-link border="{{ false }}" />
     </navigator>
   </van-cell-group> 
-   <navigator url="../upload/question-ask">
+   <!-- <navigator url="../game">
       <button>
-      上传测试数据
+      我的游戏
       </button>
-    </navigator>
+    </navigator> -->
 </view>

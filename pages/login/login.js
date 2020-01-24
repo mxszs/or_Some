@@ -81,7 +81,8 @@ Page({
     wx.login({
       success:(res) => {
         wx.request({
-          url: `https://api.weixin.qq.com/sns/jscode2session?appid=wxb7679046d6028f27&secret=d100a1ce0a99a493f48ab7b47f05fe28&js_code=${res.code}&grant_type=authorization_code`,
+          url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx5e199bd7483a4da2
+&secret=d5fb9251e6c5f0ce866f4606066ce198&js_code=${res.code}&grant_type=authorization_code`,
           header: {
             'content-type': 'application/json' // 默认值
           },

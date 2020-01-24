@@ -4,7 +4,9 @@ import Toast from '../../miniprogram_npm/vant-weapp/toast/toast';
 
 const wxUploadFile = promisify(wx.uploadFile)
 const app = getApp()
-wx.cloud.init() 
+wx.cloud.init({
+  env: 'orso-xobx1',
+}) 
 Page({
 
   data: {
@@ -126,6 +128,8 @@ Page({
             avatarUrl: app.globalData.userInfo.avatarUrl,
             nickName: app.globalData.userInfo.nickName,
             timer: Date.now(),
+            collection: [],
+            dianzan: [],
           },
           success: function (res) {
             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

@@ -1,8 +1,8 @@
 // pages/overview/overview.js
 
 const app = getApp()
-wx.cloud.init();
-const db = wx.cloud.database();
+wx.cloud.init()
+
 Page({
 
   /**
@@ -31,19 +31,21 @@ Page({
   },
   loadBanner: function() {
       var that = this;
+    const db = wx.cloud.database();
     db.collection('banner').where({
       _id: '1'
     }).get().then(res => {
-        // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-        that.setData({
-          imgUrls: res.data[0].images,
-        }, () => {
-          wx.stopPullDownRefresh()
-        })
+      // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
+      that.setData({
+        imgUrls: res.data[0].images,
+      }, () => {
+        wx.stopPullDownRefresh()
       })
+    })
   },
   loadRecommend: function() {
     var that = this;
+    const db = wx.cloud.database();
     db.collection('recommend').get().then(res => {
       // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
       console.log(res)

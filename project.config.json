@@ -1,6 +1,6 @@
 {
 	"description": "项目配置文件",
-"cloudfunctionRoot": "cloudfunctions/",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"packOptions": {
 		"ignore": []
 	},
@@ -25,7 +25,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-	"appid": "wxb7679046d6028f27",
+	"appid": "wx5e199bd7483a4da2",
 	"projectname": "ts",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -33,6 +33,7 @@
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

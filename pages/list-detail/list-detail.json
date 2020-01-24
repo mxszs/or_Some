@@ -1,4 +1,9 @@
 {
-  "navigationBarTitleText": "",
-  "usingComponents": {}
+  "navigationBarTitleText": "动态详情",
+  "usingComponents": {
+    "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
+    "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index",
+    "noData": "../../components/noData/noData"
+  }
 }

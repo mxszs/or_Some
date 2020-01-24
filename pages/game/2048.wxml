@@ -1,0 +1,50 @@
+<view class="container">
+
+  <view class="game-body">
+    <view class="heading">
+      	<text class="title">2048</text>
+      	<!-- <view class="scores-container">
+        	<view class="score-container">{{score}}</view>
+      		<view class="best-container">{{highscore}}</view>
+      	</view> -->
+    </view>
+    <view class="game-container">
+
+        <!--游戏结束显示  -->
+        <!-- <view class="game-message game-{{!over ? (win ? 'won' : 'over') : ''}}">
+          	<text class="over-msg">{{overMsg}}</text>
+          	<view class="lower">
+	        	<text class="keep-playing-button">继续</text>
+          		<text class="retry-button" bindtap="restart">再试一次</text>
+        	</view>
+        </view> -->
+
+	    <view class="grid-container" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+			<view wx:for="{{grids}}" wx:for-index="rowIdx" wx:for-item="row" class="grid-row">
+			  	<view wx:for="{{row}}" wx:for-index="colIdx" wx:for-item="cell" class="grid-cell">
+			  		<view class="tile tile-{{cell.value}}">
+			  			<view wx:if="{{cell}}" class="tile-inner">
+			      			{{cell.value}}
+			      		</view>
+			  		</view>
+			  	</view>
+			</view>
+	    </view>
+
+  	</view>
+  	<!-- <view class="game-explanation">
+      <view class="important">如何开始：</view> 手指上下左右滑动
+    </view> -->
+</view>
+<view class='head'>
+     <view class='rside rside1'>
+      <text bindtap='restart' class='score'>{{start}}</text>
+    </view>
+     <view class='rside rside2'>
+      <text>最高分 <text class='score'>{{highscore}}</text></text>
+    </view>
+    <view class='rside rside3'>
+      <text>得分 <text class='score'>{{score}}</text></text>
+    </view>
+  </view>
+</view>

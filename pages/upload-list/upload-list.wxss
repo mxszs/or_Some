@@ -22,7 +22,6 @@ image{
   flex-wrap:wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 40rpx;
 }
 
 .q-image-wrap {
@@ -42,4 +41,15 @@ image{
 .deleteBox {
   padding: 0 8px;
 text-align: right;
+background-color: #FFFFFF;
+}
+.scrollStyle {
+  background-color: #F6F6F6;
+}
+.boxStyle {
+  margin-bottom: 16px;
+}
+.textDecWidth {
+  width: 100%;
+  word-wrap: break-word;
 }
