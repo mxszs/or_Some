@@ -25,7 +25,7 @@ Page({
     const that = this;
     wx.checkSession({
       success: function (res) {
-        that.loadDate();
+        that.updataList()
       },
       fail: function (res) {
         console.log("需要重新登录");
@@ -49,17 +49,33 @@ Page({
   onReady: function () {
 
   },
+
+  updataList: function() {
+    const openid = wx.getStorageSync("openid")
+    const that = this;
+    wx.cloud.callFunction({
+      name: 'updata-infoList',
+      data: {
+        openid: openid,
+        avatarUrl: app.globalData.userInfo.avatarUrl
+      },
+      success:(res) => {
+        that.loadDate();
+      }
+    })
+  },
+
   loadDate: function (pageIndex = 1) {
     const that = this;
     wx.cloud.callFunction({
       name: 'limt-data',
       data: {
         dbName: 'info_list',
-        pageIndex,
+        pageIndex: 1,
         pageSize: 100,
       },
     }).then(res => {
-      console.log(res, 111)
+      // console.log(res, 111)
       wx.hideLoading({
         mask: false
       })

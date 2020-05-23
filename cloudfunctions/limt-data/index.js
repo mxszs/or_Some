@@ -5,7 +5,7 @@ const db = cloud.database();
 const commad = db.command;
 exports.main = async (event, context, cb) => {
   let dbName = event.dbName;
-  let fliter = event.fliter ? event.fliter : null;
+  let fliter = event.fliter ? event.fliter : {};
   let pageIndex = event.pageIndex ? event.pageIndex : 1;
   let pageSize = event.pageSize ? event.pageSize : 10;
   const resultTotal = await db.collection(dbName).where(fliter).count();
