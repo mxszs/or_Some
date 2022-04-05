@@ -38,6 +38,9 @@ const timestampToTime = (valueTime) => {
   } else if (diffTime < 60 * 1000 && diffTime > 0) {
     console.log(diffTime, 111)
     var dayNum = Math.floor(diffTime / 1000);
+    if (dayNum === 0) {
+      return (dayNum + 1) + "秒前";
+    }
     return dayNum + "秒前";
   }
 }

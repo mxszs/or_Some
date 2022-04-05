@@ -1,9 +1,9 @@
 // pages/list/list.js
-import { setTimer } from '../../utils/timer'
-const app = getApp()
+import { setTimer } from '../../utils/timer';
+const app = getApp();
 wx.cloud.init({
-  env: 'orso-xobx1',
-})
+  env: 'orso-w05bu',
+});
 Page({
 
   /**
@@ -25,23 +25,23 @@ Page({
     const that = this;
     wx.checkSession({
       success: function (res) {
-        that.updataList()
+        that.updataList();
       },
       fail: function (res) {
         console.log("需要重新登录");
-        wx.login({})
+        wx.login({});
       }
-    })
+    });
 
   },
   handleImagePreview(e) {
-    const idx = e.target.dataset.idx
-    const images = e.target.dataset.list
+    const idx = e.target.dataset.idx;
+    const images = e.target.dataset.list;
 
     wx.previewImage({
       current: images[idx],
       urls: images,
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -50,8 +50,8 @@ Page({
 
   },
 
-  updataList: function() {
-    const openid = wx.getStorageSync("openid")
+  updataList: function () {
+    const openid = wx.getStorageSync("openid");
     const that = this;
     wx.cloud.callFunction({
       name: 'updata-infoList',
@@ -59,10 +59,10 @@ Page({
         openid: openid,
         avatarUrl: app.globalData.userInfo.avatarUrl
       },
-      success:(res) => {
+      success: (res) => {
         that.loadDate();
       }
-    })
+    });
   },
 
   loadDate: function (pageIndex = 1) {
@@ -78,8 +78,8 @@ Page({
       // console.log(res, 111)
       wx.hideLoading({
         mask: false
-      })
-      const openid = wx.getStorageSync("openid")
+      });
+      const openid = wx.getStorageSync("openid");
       const setList = [];
       res.result.data.forEach(item => {
         if (item.collection && item.collection.includes(openid)) {
@@ -95,29 +95,29 @@ Page({
         setList.push({
           ...item,
           timer: setTimer(item.timer || Date.now())
-        })
-      })
+        });
+      });
       // console.log(setList.reverse(), 111)
       that.setData({
         info_list: setList.reverse(),
         loading: setList.length === 0 && true,
         hasMore: res.result.hasMore,
       }, () => {
-        wx.stopPullDownRefresh()
-      })
-      
-    })
+        wx.stopPullDownRefresh();
+      });
+
+    });
   },
   addCollection: function (e) {
     wx.showLoading({
       title: '正在添加...',
       mask: true
-    })
-    console.log(1212)
+    });
+    console.log(1212);
     const that = this;
     const clickid = e.currentTarget.dataset.id;
     const key = e.currentTarget.dataset.key;
-    const openid = wx.getStorageSync("openid")
+    const openid = wx.getStorageSync("openid");
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'collection',
@@ -133,14 +133,14 @@ Page({
         // output: res.result === 3
       },
       fail: err => {
-        console.log(err)
+        console.log(err);
       },
       complete: () => {
         // wx.hideLoading({
         //   mask: false
         // })
       }
-    })
+    });
   },
   deleteCollection: function (e) {
     const that = this;
@@ -148,10 +148,10 @@ Page({
     wx.showLoading({
       title: '正在取消...',
       mask: true
-    })
-    console.log(e)
+    });
+    console.log(e);
     const clickid = e.currentTarget.dataset.id;
-    const openid = wx.getStorageSync("openid")
+    const openid = wx.getStorageSync("openid");
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'delete-collection',
@@ -166,26 +166,26 @@ Page({
         that.loadDate();
       },
       fail: err => {
-        console.log(err)
+        console.log(err);
       },
       complete: () => {
         // wx.hideLoading({
         //   mask: false
         // })
       }
-    })
+    });
   },
   // 
   addComment: function (e) {
     const clickid = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: `../list-detail/list-detail?id=${clickid}`,
-    })
+    });
   },
   uploadData: function () {
     wx.navigateTo({
       url: '../upload/question-ask',
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面显示
@@ -194,7 +194,7 @@ Page({
     wx.showLoading({
       title: '正在加载...',
       mask: true
-    })
+    });
     this.loadDate();
   },
 
@@ -219,13 +219,13 @@ Page({
     wx.showLoading({
       title: '正在加载...',
       mask: true
-    })
+    });
     this.loadDate();
   },
   /**
    * 页面上拉触底事件的处理函数
    */
-  addloadList:function() {
+  addloadList: function () {
   },
   onReachBottom: function () {
 
@@ -237,4 +237,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "发现",
+  "navigationBarTitleText": "心愿列表",
   "usingComponents": {
     "van-row": "../../miniprogram_npm/vant-weapp/row/index",
     "van-col": "../../miniprogram_npm/vant-weapp/col/index",

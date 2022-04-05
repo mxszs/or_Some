@@ -11,7 +11,8 @@
     "pages/upload-list/upload-list",
     "pages/comment/comment",
     "components/noData/noData",
-    "pages/game/2048"
+    "pages/game/2048",
+    "pages/transition/transition"
   ],
   "permission": {
     "scope.userLocation": {
@@ -33,16 +34,10 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "pages/images/home.png",
-        "selectedIconPath": "pages/images/home-active.png",
-        "text": "首页"
-      },
-      {
         "pagePath": "pages/list/list",
         "iconPath": "pages/images/find.png",
         "selectedIconPath": "pages/images/find-active.png",
-        "text": "发现"
+        "text": "心愿单"
       },
       {
         "pagePath": "pages/user/user",

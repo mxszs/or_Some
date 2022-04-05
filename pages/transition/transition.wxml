@@ -1,0 +1,14 @@
+<!--pages/transition.wxml-->
+<view class="transition-page">
+  <van-cell-group class="transition-container">
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+  <van-button bindtap="submit" class="transition-container-button" type="primary">登录</van-button>
+</van-cell-group>
+</view>

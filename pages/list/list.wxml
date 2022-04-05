@@ -1,5 +1,5 @@
 <view>
-  <van-cell border="{{false}}" title="动态">
+  <van-cell border="{{false}}" title="添加心愿">
     <van-icon slot="right-icon" bindtap="uploadData" color="#16c2c2" name="add-o" class="custom-icon" size="20px" />
   </van-cell>
   <scroll-view bindscrolltolower="addloadList" wx:if="{{info_list.length}}" class="scrollStyle" scroll-y style="height: 586px;">
@@ -54,6 +54,6 @@
     </view>
   </scroll-view>
   <noData wx:if="{{loading}}">
-    <view bindtap='a'>暂无数据</view>
+    <view bindtap='a'>暂无心愿</view>
   </noData>
 </view>

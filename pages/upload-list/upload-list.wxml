@@ -32,6 +32,6 @@
 </view>
 </scroll-view>
 <noData  wx:if="{{loading}}">
-  <view>暂无数据</view>
+  <view>暂无心愿</view>
 </noData>
 </view>

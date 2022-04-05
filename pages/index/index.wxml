@@ -35,6 +35,8 @@
           </view>
           </van-tab>
           <van-tab title="热门">热门</van-tab>
-          <van-tab title="附近">附近</van-tab>
+          <van-tab title="附近">
+          <navigator url="../map/map">查看附近</navigator>
+          </van-tab>
         </van-tabs>
   </view>

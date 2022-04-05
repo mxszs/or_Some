@@ -1,0 +1,8 @@
+/* pages/transition.wxss */
+.transition-container {
+  display: flex;
+  justify-content: space-between;
+}
+.transition-container-button {
+  margin-right: 8px;
+}

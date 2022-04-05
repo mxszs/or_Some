@@ -1,8 +1,8 @@
 // pages/comment/comment.js
-const app = getApp()
+const app = getApp();
 wx.cloud.init({
-  env: 'orso-xobx1',
-})
+  env: 'orso-w05bu',
+});
 Page({
 
   /**
@@ -18,19 +18,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(options);
     this.setData({
       detailId: options.id,
-    })
+    });
   },
-  handleContentInput: function(e) {
-    const value = e.detail.value
+  handleContentInput: function (e) {
+    const value = e.detail.value;
     this.setData({
       content: value,
       contentCount: value.length
-    })
+    });
   },
-  submit: function() {
+  submit: function () {
     const that = this;
     const comment = this.data.content;
     // avatarUrl: app.globalData.userInfo.avatarUrl,
@@ -39,7 +39,7 @@ Page({
     wx.showLoading({
       title: '正在提交...',
       mask: true,
-    })
+    });
     db.collection('comment').add({
       data: {
         detailId: this.data.detailId,
@@ -48,16 +48,16 @@ Page({
         comment: comment,
         timer: Date.now(),
       },
-      success: function(res) {
-        console.log(res)
+      success: function (res) {
+        console.log(res);
         wx.redirectTo({
           url: `../list-detail/list-detail?id=${that.data.detailId}`,
-        })
+        });
         wx.hideLoading({
           mask: false,
-        })
+        });
       }
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -107,4 +107,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

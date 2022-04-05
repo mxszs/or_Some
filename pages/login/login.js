@@ -35,22 +35,22 @@ Page({
     }
     var that = this;
     // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              //从数据库获取用户信息
-              that.queryUsreInfo();
-              //用户已经授权过
-              wx.switchTab({
-                url: '/pages/index/index'
-              })
-            }
-          });
-        }
-      }
-    })
+    // wx.getSetting({
+    //   success: function (res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       wx.getUserInfo({
+    //         success: function (res) {
+    //           //从数据库获取用户信息
+    //           that.queryUsreInfo();
+    //           //用户已经授权过
+    //           wx.switchTab({
+    //             url: '/pages/index/index'
+    //           })
+    //         }
+    //       });
+    //     }
+    //   }
+    // })
   },
   bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
@@ -58,8 +58,8 @@ Page({
       var that = this;
       that.queryUsreInfo();
       //授权成功后，跳转进入小程序首页
-      wx.switchTab({
-        url: '/pages/index/index'
+      wx.navigateTo({
+        url: '/pages/transition/transition',
       })
     } else {
       //用户按了拒绝按钮
